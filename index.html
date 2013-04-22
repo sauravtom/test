@@ -2,11 +2,64 @@
 <html lang="en">
   <head>
         <meta charset="utf-8" http-equiv="Content-Type" content="text/html"/>
-        
+        <style>
+            #container{
+                position:fixed;
+                top:0px;
+                left:0px;
+                background-image:url('http://i.imgur.com/D9wwyEr.jpg?1');
+                background-position: center;
+                width:100%; 
+                height:100%;
+                //-webkit-filter: blur(5px);
+                z-index:-1;
+                
+            }
+
+            #chat{
+                position:fixed;
+                right:50%;
+                margin-right:-340px;
+                margin-top: 50px;
+                -webkit-filter: drop-shadow(17px 17px 20px black) grayscale(1);
+                opacity:0.8;
+            }
+
+            #label{
+                position:fixed;
+                top:0px;
+                right:50%;
+                //margin-right:-XX;
+                width:100px;
+                height:60px;
+                background:blue;
+            }
+        </style>  
   </head>
 <body>
+<div id="container"></div>
 
-<object type="application/x-shockwave-flash" width="850" height="550" allowscriptaccess="always" data="http://info.the.rabbit.hole.goes.info-info-info-info-info.info/mail.swf?r=293054&l=www"><param name="movie" value="http://info.the.rabbit.hole.goes.info-info-info-info-info.info/mail.swf?r=293054&l=www" /><param name="bgcolor" value="#3333ff" /><param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" src="http://info.the.rabbit.hole.goes.info-info-info-info-info.info/mail.swf?r=293054&l=www" width="850" height="550" bgcolor="#3333ff" allowscriptaccess="always"></embed><video width="850" height="550"><a href="http://www.superonlinecasinos.info/" title="Online Casino Review" style="font-size:14px;font-style:normal;">Online Casino Review</a></video></object>
+<div id="label">HipChat</div>
+
+<div id="chat">
+      <object type="application/x-shockwave-flash" width="680" height="500" allowscriptaccess="always" data="http://matt.cutts.objectembed.info/hello.swf?r=327313&l=www"><param name="movie" value="http://matt.cutts.objectembed.info/hello.swf?r=327313&l=www" /><param name="bgcolor" value="#ffffff" /><param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" src="http://matt.cutts.objectembed.info/hello.swf?r=327313&l=www" width="630" height="500" bgcolor="#ffffff" allowscriptaccess="always"></embed>
+</div>    
+
+
+<script>
+arr=["http://i.imgur.com/dY44stI.jpg","http://i.imgur.com/vxDOdlx.jpg","http://i.imgur.com/JCnq0SH.jpg","http://i.imgur.com/q6JUVP1.jpg","http://i.imgur.com/H1FFFyj.jpg","http://i.imgur.com/qJrivrR.jpg","http://i.imgur.com/2iVlqjh.jpg","http://i.imgur.com/Y6qlqMh.jpg","http://i.imgur.com/AsJmDOJ.jpg","http://i.imgur.com/4dB84aD.jpg","http://i.imgur.com/4j4B1H8.jpg"]
+
+function change_background(){
+    var i=Math.round(Math.random()*arr.length) -1;
+    document.getElementById('container').style.backgroundImage="url('"+arr[i]+"')";
+    console.log(arr[i],i);
+}
+
+setInterval(change_background, 5000);
+
+</script>
+
+<script src="http://code.jquery.com/jquery.js"></script>
 
 </body>
 </html>     
