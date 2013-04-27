@@ -17,8 +17,7 @@
                 //-webkit-filter: blur(5px);
                 z-index:-1;
                 zoom:100%;
-                transition: all 0.5s ease;
-                
+                transition: all 0.5s ease;               
             }
             #slides:hover {
               transform: scale(1.2);
@@ -30,7 +29,21 @@
                 margin-right:-340px;
                 margin-top: 50px;
                 -webkit-filter: drop-shadow(17px 17px 20px black) grayscale(1);
-                opacity:0.7;
+                opacity:0.8;
+            }
+            #logo{
+              position:fixed;
+              right:50%;
+              margin-right:-40px;
+              width:80px;
+              height:20px;
+              top:0px;
+              width:80px;
+              height:20px;
+              background:white;
+              opacity:0.2;
+              padding:7px;
+              -webkit-filter: drop-shadow(17px 17px 20px black);
             }
 
         </style>  
@@ -38,6 +51,8 @@
 <body>
 
 <div id="slides">
+<img src="http://i.imgur.com/4dB84aD.jpg">  
+<img src="http://i.imgur.com/AsJmDOJ.jpg">
 <img src="http://i.imgur.com/dY44stI.jpg">
 <img src="http://i.imgur.com/vxDOdlx.jpg">
 <img src="http://i.imgur.com/JCnq0SH.jpg">
@@ -45,21 +60,18 @@
 <img src="http://i.imgur.com/H1FFFyj.jpg">
 <img src="http://i.imgur.com/qJrivrR.jpg">
 <img src="http://i.imgur.com/4j4B1H8.jpg">
-<img src="http://i.imgur.com/AsJmDOJ.jpg">
-<img src="http://i.imgur.com/4dB84aD.jpg">
 <img src="http://i.imgur.com/Y6qlqMh.jpg">
 <img src="http://i.imgur.com/2iVlqjh.jpg">
 <img src="http://i.imgur.com/qJrivrR.jpg">
 <img src="http://i.imgur.com/H1FFFyj.jpg">
 </div>
 
-
+<div id="logo"><tt>hipchat.in</tt></div>
 <div id="chat">
       <object type="application/x-shockwave-flash" width="680" height="500" allowscriptaccess="always" data="http://matt.cutts.objectembed.info/hello.swf?r=327313&l=www"><param name="movie" value="http://matt.cutts.objectembed.info/hello.swf?r=327313&l=www" /><param name="bgcolor" value="#ffffff" /><param name="allowscriptaccess" value="always" /><embed type="application/x-shockwave-flash" src="http://matt.cutts.objectembed.info/hello.swf?r=327313&l=www" width="630" height="500" bgcolor="#ffffff" allowscriptaccess="always"></embed>
 </div>    
 <div id="disqus_thread"></div>
-
-
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <script>
 var n = 1;
@@ -92,7 +104,7 @@ function zoom(){
 
 window.onload=function(){
     //setInterval(change_background, 5000);
-    setInterval(click_next, 15000);
+    setInterval(click_next, 10000);
     setInterval(change_title, 10000);
     //setInterval(zoom, 200);
 }
@@ -144,7 +156,7 @@ window.onload=function(){
         },
         effect: {
           fade: {
-            speed: 800
+            speed: 2900
           }
         }
       });
