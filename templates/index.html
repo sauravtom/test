@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block head %}
+	<style type="text/css">
+		.list_heading{
+			list-style-type: none;
+			padding:10px;
+			border-bottom:1px dashed;
+			height:50px;
+		}
+		.list{
+			list-style-type: none;
+			height:20px;
+		}
+		.small{
+			font-size: 50%;
+		}
+	</style>
+{% endblock %}
+
+{% block content %}
+	
+	{% if arr %}
+		
+		<!--{{arr}}-->
+		<h3>List of apps</h3><br>
+		<li class='list_heading'>
+			<p class='col-xs-6'>Name</p>
+			<p class='col-xs-2'>Version</p>
+			<p class='col-xs-2'>Url</p>
+			<p class='col-xs-2'>Delete</p>
+		</li>
+		{% for i in arr %}
+			<li class='list'>
+				<p class='col-xs-6'>{{i['launcher_name']}}</p>
+				<p class='col-xs-2'>{{i['launcher_version']}}</p>
+				<p class='small col-xs-2'>{{i['launcher_apk']}}</p>
+
+				<a class='col-xs-2' href='/delete/{{i['launcher_name']}}'>
+				<button type="button" class="btn btn-danger btn-sm">Delete</button>
+				</a>
+				
+			</li>
+			<br>
+		{% endfor %}
+
+	{% endif %}
+	<br>
+	<button id='new' class="btn btn-primary btn-md">New</button>
+	<br>    
+		    <form id='form' class="form-horizontal" enctype="multipart/form-data" action='/upload_apk' method='POST'>
+
+			      <div class="form-group">
+			        <label for="inputApk" class="control-label col-xs-2">Launcher APK</label>
+			      </div>
+			      <div class="col-xs-offset-2 col-xs-10">
+				      <div class="form-group">
+				        <input type="file" name="launcher_apk"/>
+				      </div>
+			      </div>
+
+			      <div class="form-group">
+			        <label for="inputTitle" class="control-label col-xs-2">Launcher Name</label>
+			        <div class="col-xs-10">
+			          <input type="text" name='launcher_name' class="form-control" placeholder="Launcher Name" >
+			        </div>
+			      </div>
+
+			      <div class="form-group">
+			        <label for="inputTitle" class="control-label col-xs-2">Version</label>
+			        <div class="col-xs-10">
+			          <input type="text" name='launcher_version' class="form-control" placeholder="Version" >
+			        </div>
+			      </div>		 
+
+			      <div class="form-group">
+			        <div class="col-xs-offset-2 col-xs-10">
+			          <button type="submit" class="btn btn-primary">Submit</button>
+			        </div>
+			      </div>
+		    </form>
+
+	
+
+{% endblock %}
+
+{% block script %}
+	<script type="text/javascript">
+		$("#form").hide();
+		$("#new").click(function(){
+		  $("#form").toggle();
+		});
+	</script>
+{% endblock %}
