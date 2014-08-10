@@ -62,14 +62,12 @@ def upload_apk():
 
 @app.route('/delete/<launcher_name>')
 def delete(launcher_name):
-    arr = []
-    for folder in os.listdir('upload'):
-        arr.append(folder.split('_')[:-1])
-    if launcher_name not in arr:
-        return 'Launcher not found'
+    try:
+        shutil.rmtree('upload/' + launcher_name)
+        msg = "Your launcher has been successfully removed."
+    except:
+        msg = 'unable to find this launcher'
 
-    shutil.rmtree('upload/' + launcher_name)
-    msg = "Your launcher has been successfully removed."
     return msg
 
 
