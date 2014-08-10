@@ -14,14 +14,14 @@ from flask import send_from_directory, redirect
 
 app.config['APK_DIR'] = 'upload'
 
-STATIC_URL_PREFIX = ""
+STATIC_URL_PREFIX = "http://173.255.205.164/static/"
 
 def launcher_details():
     arr = []
     for folder in os.listdir('upload'):
         d ={}
         d['launcher_name'] = "_".join(folder.split('_')[:-1])
-        d['launcher_apk'] = STATIC_URL_PREFIX + '/launcher.apk' 
+        d['launcher_apk'] = STATIC_URL_PREFIX + folder +'/launcher.apk' 
         d['launcher_version'] = folder.split('_')[-1]
         arr.append(d)
     return arr
