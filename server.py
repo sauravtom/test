@@ -64,7 +64,7 @@ def upload_apk():
 def delete(launcher_name):
     arr = []
     for folder in os.listdir('upload'):
-        arr.append(folder)
+        arr.append(folder.split('_')[:-1])
     if launcher_name not in arr:
         return 'Launcher not found'
 
@@ -75,5 +75,5 @@ def delete(launcher_name):
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(host='0.0.0.0',port=5000)
 
