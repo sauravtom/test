@@ -25,17 +25,14 @@
 		<!--{{arr}}-->
 		<h3>List of apps</h3><br>
 		<li class='list_heading'>
-			<p class='col-xs-6'>Name</p>
+			<p class='col-xs-8'>Name</p>
 			<p class='col-xs-2'>Version</p>
-			<p class='col-xs-2'>Url</p>
 			<p class='col-xs-2'>Delete</p>
 		</li>
 		{% for i in arr %}
 			<li class='list'>
-				<p class='col-xs-6'>{{i['launcher_name']}}</p>
+				<p class='col-xs-8'>{{i['launcher_name']}}</p>
 				<p class='col-xs-2'>{{i['launcher_version']}}</p>
-				<p class='small col-xs-2'>{{i['launcher_apk']}}</p>
-
 				<a class='col-xs-2' href='/delete/{{i['launcher_name']}}'>
 				<button type="button" class="btn btn-danger btn-sm">Delete</button>
 				</a>
